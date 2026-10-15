@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Only these two folders can be shared through the FileProvider:
+     issue photos (camera) and the CSV export. Nothing else in the app's storage is exposed. -->
+<paths>
+    <files-path name="issue_images" path="issue_images/" />
+    <cache-path name="exports" path="exports/" />
+</paths>

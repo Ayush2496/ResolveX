@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Rx">
+
+        <!-- Splash Activity (Launcher) - keeps its original look and theme -->
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ResolveX">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Auth Activities -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false" />
+
+        <!-- Student Module Activities -->
+        <activity
+            android:name=".activities.StudentDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CreateIssueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MyIssuesActivity"
+            android:exported="false" />
+
+        <!-- Staff Module Activity -->
+        <activity
+            android:name=".activities.StaffDashboardActivity"
+            android:exported="false" />
+
+        <!-- Admin Module Activities -->
+        <activity
+            android:name=".activities.AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AllIssuesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.UserManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.UserDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AssignStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FeedbackListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RecurringIssueDetailsActivity"
+            android:exported="false" />
+
+        <!-- Common Activities -->
+        <activity
+            android:name=".activities.IssueDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ProfileActivity"
+            android:exported="false" />
+
+        <!-- Broadcast Receiver for Status Updates (Internal broadcast only) -->
+        <receiver
+            android:name=".receivers.IssueStatusReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.resolvex_prototype.ACTION_ISSUE_STATUS_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- File Provider for Camera capture and CSV sharing -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

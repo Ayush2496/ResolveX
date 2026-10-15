@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_header_home" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="28dp">
+
+            <LinearLayout
+                style="@style/Rx.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvProfileInitials"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_rx_avatar"
+                    android:gravity="center"
+                    android:textColor="@color/rx_green_fg"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        style="@style/Rx.Text.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/chipRole"
+                        style="@style/Rx.Pill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Rx.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView style="@style/Rx.Text.Label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Email" />
+                <TextView android:id="@+id/tvProfileEmail" style="@style/Rx.Text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" />
+
+                <TextView style="@style/Rx.Text.Label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Department" />
+                <TextView android:id="@+id/tvProfileDept" style="@style/Rx.Text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/llProfileYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/Rx.Text.Label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Academic year" />
+                    <TextView android:id="@+id/tvProfileYear" style="@style/Rx.Text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" />
+                </LinearLayout>
+
+                <TextView style="@style/Rx.Text.Label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Phone" />
+                <TextView android:id="@+id/tvProfilePhone" style="@style/Rx.Text" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                style="@style/Widget.Rx.Button.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Log out" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/view_bottom_bar" />
+
+</LinearLayout>

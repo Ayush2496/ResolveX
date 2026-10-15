@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Header of the main tabs: small line, big title, bell with a dot. Filled by UiUtils.bindHeader(). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="20dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvHeaderSub"
+            style="@style/Rx.Text.Muted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            style="@style/Rx.Text.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/btnBell"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_rx_circle"
+        android:clickable="true"
+        android:contentDescription="Notifications"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_nav_alerts"
+            app:tint="@color/rx_ink"
+            xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+        <View
+            android:id="@+id/viewBellDot"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_rx_dot_accent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>
