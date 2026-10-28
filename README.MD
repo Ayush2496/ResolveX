@@ -228,5 +228,5 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## License
 
-No license has been specified for this repository.
+MIT — see [LICENSE](./LICENSE) for details.
 
