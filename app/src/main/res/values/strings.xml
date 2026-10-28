@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ResolveX</string>
+    <string name="app_subtitle">Campus Issue Reporting &amp; Resolution Management</string>
+
+    <!-- Authentication -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="department">Department</string>
+    <string name="role">Role</string>
+    <string name="dont_have_account">Don\'t have an account? Register as Student</string>
+    <string name="already_have_account">Already have an account? Login</string>
+
+    <!-- Dashboards -->
+    <string name="my_issues">My Issues</string>
+    <string name="all_issues">All Issues</string>
+    <string name="assigned_issues">Assigned Issues</string>
+    <string name="pending_issues">Pending</string>
+    <string name="in_progress_issues">In Progress</string>
+    <string name="resolved_issues">Resolved</string>
+    <string name="closed_issues">Closed</string>
+    <string name="total_issues">Total Issues</string>
+    <string name="report_issue">Report an Issue</string>
+    <string name="recent_issues">Recent Issues</string>
+
+    <!-- Create Issue -->
+    <string name="issue_title">Issue Title</string>
+    <string name="category">Category</string>
+    <string name="priority">Priority</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="accuracy_confirm">I confirm that the information provided is accurate.</string>
+    <string name="submit_issue">Submit Issue</string>
+
+    <!-- Details and Verification -->
+    <string name="issue_details">Issue Details</string>
+    <string name="issue_timeline">Issue History Timeline</string>
+    <string name="assigned_staff">Assigned Staff Member</string>
+    <string name="resolution_details">Resolution Details</string>
+    <string name="resolution_notes">Resolution Notes</string>
+    <string name="verify_question">Was your issue actually fixed?</string>
+    <string name="yes_verify">YES, ISSUE FIXED</string>
+    <string name="no_reopen">NO, STILL NOT FIXED</string>
+    <string name="submit_feedback">Submit Feedback</string>
+
+    <!-- Actions -->
+    <string name="assign_staff">Assign Staff</string>
+    <string name="start_work">START WORK</string>
+    <string name="mark_resolved">MARK AS RESOLVED</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="manage_users">Manage Users</string>
+    <string name="user_feedback">User Feedback</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+
+    <!-- General -->
+    <string name="search_hint">Search by title, location or RX-ID…</string>
+    <string name="filter_all">All</string>
+    <string name="no_data">No issues found.</string>
+    <string name="notifications">Notifications</string>
+
+    <!-- Filters, location, users -->
+    <string name="filters">Filters</string>
+    <string name="status">Status</string>
+    <string name="date">Date</string>
+    <string name="building_hint">Campus area</string>
+    <string name="room_hint">Room or spot (optional), e.g. Room 204</string>
+    <string name="change_priority">Change Priority</string>
+    <string name="give_feedback_close">GIVE FEEDBACK &amp; CLOSE</string>
+    <string name="tab_staff">Staff</string>
+    <string name="tab_students">Students</string>
+    <string name="new_password">New password (min 6 characters)</string>
+</resources>

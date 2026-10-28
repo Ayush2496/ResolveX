@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A stat card: coloured dot, big number, label. Filled by UiUtils.bindStat(). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Rx.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <View
+        android:id="@+id/viewStatDot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:background="@drawable/bg_rx_dot" />
+
+    <TextView
+        android:id="@+id/tvStatValue"
+        style="@style/Rx.Text.Stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/tvStatLabel"
+        style="@style/Rx.Text.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout>

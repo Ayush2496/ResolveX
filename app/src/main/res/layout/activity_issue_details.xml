@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="28dp">
+
+            <!-- Status + priority -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipStatus"
+                    style="@style/Rx.Pill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/chipPriority"
+                    style="@style/Rx.Pill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                style="@style/Rx.Text.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvDetailDescription"
+                style="@style/Rx.Text.Muted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" />
+
+            <!-- 6-step progress -->
+            <LinearLayout
+                android:id="@+id/llProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-2dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="-2dp"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <TextView style="@style/Rx.Text.Label" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Reported" android:textSize="10sp" />
+                <TextView style="@style/Rx.Text.Label" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Assigned" android:textSize="10sp" />
+                <TextView style="@style/Rx.Text.Label" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Working" android:textSize="10sp" />
+                <TextView style="@style/Rx.Text.Label" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Resolved" android:textSize="10sp" />
+                <TextView style="@style/Rx.Text.Label" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Verified" android:textSize="10sp" />
+                <TextView style="@style/Rx.Text.Label" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Closed" android:textSize="10sp" />
+            </LinearLayout>
+
+            <!-- Facts -->
+            <LinearLayout
+                style="@style/Rx.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:id="@+id/tvDetailCategory"
+                    style="@style/Rx.Text.Section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvDetailLocation"
+                    style="@style/Rx.Text.Muted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/tvDetailReporter"
+                    style="@style/Rx.Text.Muted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivIssueImage"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_rx_card"
+                android:contentDescription="Photo of the issue"
+                android:padding="1dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <!-- Why the student reopened it (shown to staff while they rework it) -->
+            <LinearLayout
+                android:id="@+id/cardReopenDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/rx_pink_bg"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Rx.Text.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student reopened this issue"
+                    android:textColor="@color/rx_pink_fg" />
+
+                <TextView
+                    android:id="@+id/tvReopenReason"
+                    style="@style/Rx.Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp" />
+
+                <TextView
+                    android:id="@+id/tvReopenComment"
+                    style="@style/Rx.Text.Muted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Assigned staff (+ admin buttons) -->
+            <LinearLayout
+                android:id="@+id/cardAssignedStaff"
+                style="@style/Rx.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    style="@style/Rx.Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assigned to" />
+
+                <TextView
+                    android:id="@+id/tvStaffName"
+                    style="@style/Rx.Text.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Unassigned" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAssignStaff"
+                    style="@style/Widget.Rx.Button.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Assign staff"
+                    android:visibility="gone" />
+
+                <!-- Admin: the final say on priority. Tap one to change it. -->
+                <LinearLayout
+                    android:id="@+id/llPriorityPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/Rx.Text.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Priority (admin)" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/chipPrioLow" style="@style/Rx.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Low" />
+                        <TextView android:id="@+id/chipPrioMedium" style="@style/Rx.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="Medium" />
+                        <TextView android:id="@+id/chipPrioHigh" style="@style/Rx.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="High" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Resolution (visible once staff submitted one) -->
+            <LinearLayout
+                android:id="@+id/cardResolutionDetails"
+                style="@style/Rx.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Rx.Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resolution" />
+
+                <TextView
+                    android:id="@+id/tvResolutionNotes"
+                    style="@style/Rx.Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" />
+
+                <ImageView
+                    android:id="@+id/ivResolutionImageDisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="Photo of the fix"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Staff controls -->
+            <LinearLayout
+                android:id="@+id/cardStaffActions"
+                style="@style/Rx.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Rx.Text.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your work on this issue" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartWork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Start work"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llResolutionForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Rx.TextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="What did you do to fix it?">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etResolutionNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:lines="3"
+                            android:minLines="3" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnResolutionPhoto"
+                        style="@style/Widget.Rx.Button.Outline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Add photo of the fix (optional)" />
+
+                    <ImageView
+                        android:id="@+id/ivResolutionPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="Photo of the fix"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMarkResolved"
+                        style="@style/Widget.Rx.Button.Accent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Mark as resolved" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Student: verify / reopen / feedback -->
+            <LinearLayout
+                android:id="@+id/cardVerification"
+                style="@style/Rx.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvVerifyTitle"
+                    style="@style/Rx.Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvVerifyQuestion"
+                    style="@style/Rx.Text.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:id="@+id/llVerificationButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnVerifyYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:text="Verify" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnVerifyNo"
+                        style="@style/Widget.Rx.Button.Outline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="Reopen" />
+                </LinearLayout>
+
+                <!-- After verifying: rate the fix; sending this closes the issue -->
+                <LinearLayout
+                    android:id="@+id/llFeedbackForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:numStars="5"
+                        android:progressTint="@color/rx_accent"
+                        android:rating="5"
+                        android:stepSize="1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Rx.TextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Comments (optional)">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFeedbackComment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:minLines="2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSubmitFeedback"
+                        style="@style/Widget.Rx.Button.Accent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Send feedback and close" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llReopenForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/Rx.Text.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What best describes the problem?" />
+
+                    <RadioGroup
+                        android:id="@+id/rgReopenReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/rx_accent"
+                            android:checked="true"
+                            android:minHeight="44dp"
+                            android:text="Completely unresolved" />
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/rx_accent"
+                            android:minHeight="44dp"
+                            android:text="Partially resolved" />
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/rx_accent"
+                            android:minHeight="44dp"
+                            android:text="Problem returned" />
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/rx_accent"
+                            android:minHeight="44dp"
+                            android:text="Different problem remains" />
+                    </RadioGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Rx.TextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Additional details">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etReopenComment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:minLines="2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSubmitReopen"
+                        style="@style/Widget.Rx.Button.Accent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Reopen issue" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Timeline -->
+            <TextView
+                style="@style/Rx.Text.Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:text="Timeline" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

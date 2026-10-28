@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primary_blue">#1A237E</color>
+    <color name="primary_blue_dark">#0D47A1</color>
+    <color name="primary_blue_light">#3F51B5</color>
+
+    <color name="secondary_teal">#00897B</color>
+    <color name="secondary_teal_dark">#004D40</color>
+
+    <!-- Neutral Backgrounds -->
+    <color name="bg_light">#F8F9FA</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="surface_variant">#EDEDED</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_light">#BDBDBD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Status Colors -->
+    <color name="status_submitted">#757575</color>
+    <color name="status_assigned">#FF8F00</color>
+    <color name="status_in_progress">#1976D2</color>
+    <color name="status_resolved">#388E3C</color>
+    <color name="status_verified">#00897B</color>
+    <color name="status_closed">#616161</color>
+    <color name="status_reopened">#D32F2F</color>
+
+    <!-- Priority Colors -->
+    <color name="priority_high">#D32F2F</color>
+    <color name="priority_medium">#F57C00</color>
+    <color name="priority_low">#388E3C</color>
+
+    <!-- Background tints -->
+    <color name="chip_bg">#E0E0E0</color>
+    <color name="divider_color">#EEEEEE</color>
+</resources>
